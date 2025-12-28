@@ -5,7 +5,10 @@
 특히 자율주행 구현에 활용되는 **인지, 판단, 제어, 시뮬레이션** 등 다양한 기술 요소를  
 직접 다뤄봄으로써 이후 심화 학습을 위한 기초 역량을 확보하고자 한다.
 
-- **시뮬레이션 영상(YouTube)**: [![Video Label](http://img.youtube.com/vi/2VR7mfooOVU/0.jpg))](https://www.youtube.com/watch?v=2VR7mfooOVU)
+## 시뮬레이션 영상(YouTube)
+아래 썸네일을 클릭하면 실제 주행 영상을 확인할 수 있습니다.
+[![Video Label](http://img.youtube.com/vi/2VR7mfooOVU/0.jpg)](https://www.youtube.com/watch?v=2VR7mfooOVU)
+
 교육 일시 2025년 12월 26일 10:00~17:00 (점심시간 제외 6시간)
 
 강의자 : 김형진
