@@ -61,8 +61,10 @@ git clone https://github.com/SKKUAutoLab/H-Mobility-Autonomous-Advanced-Course.g
 ```
 두 개의 실습 코드를 모두 홈 디렉터리(~)에 설치한다.
 
+---
+
 ### 2. 리눅스 기초 커맨드 강의
-linux command(기초)
+linux command(기본 명령어)
 ```bash
 man     # 명령어 매뉴얼 확인
 cd      # 디렉터리 이동
@@ -72,7 +74,7 @@ touch   # 파일 생성
 mkdir   # 디렉터리 생성
 ```
 
-ros2 command(기초)
+ros2 command(기본 명령어)
 ```bash
 ros2 node list                           # 실행 중인 노드 목록 확인
 ros2 topic list                          # 퍼블리시 중인 토픽 목록 확인
@@ -81,7 +83,8 @@ colcon build --symlink-install --packages-select <package_name>       # 선택 �
 
 ```
 
-bashrc에 자주 사용하는 source 및 명령어 alias 걸기 실습
+.bashrc 설정 실습
+자주 사용하는 source 및 명령어 alias 설정
 ```bash
 cd ~; code ./.bashrc
 source /opt/ros/humble/setup.bash
@@ -90,17 +93,115 @@ alias 'e'=exit
 alias 'cb'=colcon build --symlink-install
 ```
 
-### 3. roboflow, github 계정 생성 및 간단한 사용방법 제시
-https://roboflow.com/
+rqt tool 사용방법 간단 리뷰.
+rqt_graph의 노드 및 토픽을 확인하는 방법에 대해 간단히 설명.
 
-https://github.com/
+---
+### 3. Roboflow · GitHub 계정 생성 및 간단한 사용 방법 안내
 
-### 4. 팀별로 
-https://www.youtube.com/watch?v=DgEK8iT9QeA&list=PLIyoAG_PPqRfgHJl1UnMCg3h4-mE_eBfF&index=19
+**Roboflow**는 데이터 라벨링(Labeling), 데이터 증강(Augmentation),  
+유료 플랜 사용 시 모델 학습까지 지원하는 **컴퓨터 비전 올인원 플랫폼**이다.
 
+금번 실습에서는 Roboflow의 다양한 기능 중  
+**데이터 라벨링 과정에 초점을 맞추어 실습을 진행**하였다.
 
-[![Simulation Video](http://img.youtube.com/vi/DgEK8iT9QeA&list=PLIyoAG_PPqRfgHJl1UnMCg3h4-mE_eBfF&index=19/0.jpg)](https://www.youtube.com/watch?v=DgEK8iT9QeA&list=PLIyoAG_PPqRfgHJl1UnMCg3h4-mE_eBfF&index=19)
+- Roboflow 공식 웹사이트: https://roboflow.com/
+
+> 본 실습에서는 객체 인식 기반 자율주행 구현의 첫 단계로,  
+> **라벨링 품질이 인지 성능에 미치는 영향**을 직접 확인하는 것을 목표로 한다.
+
+---
+
+또한 팀 단위 협업 및 코드 관리를 위해  
+**모든 교육 참여자에게 GitHub 계정 생성을 필수로 안내**하였다.
+
+- GitHub 공식 웹사이트: https://github.com/
+
+> GitHub를 활용하여 코드 공유, 변경 이력 관리, 협업 흐름을 경험하도록 구성하였다.
+
+---
+
+### 4. 팀별 영상 시청 후 코드 리뷰
+
+각 팀은 **3인 단위로 역할을 분담**하여 강의 영상을 시청하고,  
+제한된 시간 내 학습 --> 설명 --> 토론 과정을 통해 이해도를 높인다.
+
+#### 진행 방식
+
+1. 팀당 3명이 **서로 다른 영상 범위**를 분담하여 시청
+2. **영상 시청 시간: 1시간 제한**
+3. 시청 종료 후, 팀 내에서 **총 30분간 내용 공유**
+   - 인당 10분씩 설명
+4. 설명 이후 코드 구조 및 동작 방식에 대한 토론 진행
+
+---
+
+#### 영상 분담 및 역할
+
+##### 📷 카메라 인지부 담당자 1
+- **영상 번호**: 18 ~ 22  
+- **주요 노드**
+  - `image_publisher_node`
+  - `yolov8_node`
+
+<!-- [카메라 인지부 담당자 1 설명 이미지 삽입 공간] -->
+<!-- 예: image_publisher 흐름도, YOLOv8 추론 결과 -->
+
+---
+
+##### 🚦 카메라 인지부 담당자 2
+- **영상 번호**: 23 ~ 25  
+- **주요 노드**
+  - `traffic_light_detector_node`
+  - `lane_info_extractor_node`
+
+<!-- [차선 및 신호등 인지 결과 이미지 삽입 공간] -->
+<!-- 예: 차선 검출 결과, 신호등 인식 결과 -->
+
+---
+
+##### 🧠 차량 판단부 담당자
+- **영상 번호**: 27 ~ 28  
+- **주요 노드**
+  - `path_planner_node`
+  - `motion_planner_node`
+
+<!-- [경로 계획 및 제어 출력 이미지 삽입 공간] -->
+<!-- 예: 경로 시각화, 조향/속도 출력 -->
+
+---
+
+#### 참고 영상 링크
+
+[![Simulation Video](http://img.youtube.com/vi/DgEK8iT9QeA/0.jpg)](https://www.youtube.com/watch?v=DgEK8iT9QeA&list=PLIyoAG_PPqRfgHJl1UnMCg3h4-mE_eBfF&index=19)
+
+---
 
 ### 5. 초단기 자율주행 차량 해커톤
 
+초기 제공된 프로젝트 코드를 그대로 실행할 경우,  
+**차량 제어부의 불안정성으로 인해 좌우 진동(Oscillation)이 발생**하는 문제가 존재한다.
 
+본 해커톤에서는 해당 문제를 해결하기 위해  
+**차량 제어부 코드 수정 및 튜닝을 수행**한다.
+
+#### 제한 조건
+
+- **코드 수정 제한 시간**: 1시간
+- **트랙**: 동일 트랙 사용
+- **실행 횟수 제한 없음**
+
+#### 평가 기준
+
+- **랩 타임 점수**
+  - 1등: 20점
+  - 2등: 18점
+  - 3등: 16점
+  - 4등: 14점
+
+- **감점 요소**
+  - 차량 바퀴가 라인을 밟을 때마다 **–1점**
+
+> 속도뿐만 아니라 **안정성 및 제어 품질**을 함께 평가한다.
+
+![Lap Time Comparison](img/UNITA_2025_12_26_scoreboard.jpg)
