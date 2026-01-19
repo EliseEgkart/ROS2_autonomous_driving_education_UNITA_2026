@@ -22,7 +22,6 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 pip install huggingface_hub
 
 
-
 # cp -r ~/H-Mobility-Autonomous-Advanced-Course-Simulation/src/simulation_pkg/models/* /home/$(whoami)/.gazebo/models
 GAZEBO_DIR="/home/$(whoami)/.gazebo"
 if [ -d "$GAZEBO_DIR" ]; then
