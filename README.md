@@ -200,3 +200,8 @@ rqt tool 사용방법 간단 리뷰.
 
 ![Lap Time Comparison](img/UNITA_2025_12_26_scoreboard.jpg)
 
+
+### 6. 자료 원본
+https://github.com/SKKUAutoLab/H-Mobility-Autonomous-Advanced-Course-Simulation
+
+해당 교육자료는 성균관대학교의 자동화연구실 자료를 바탕으로 제작되었습니다.
